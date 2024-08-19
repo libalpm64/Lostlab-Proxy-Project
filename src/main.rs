@@ -9,7 +9,6 @@
 use std::collections::HashMap;
 use std::fs::File;
 use std::io::{self, BufReader};
-use std::net::SocketAddr;
 use std::sync::Arc;
 use std::time::{Duration, Instant, SystemTime, UNIX_EPOCH};
 use std::fmt;
@@ -255,11 +254,9 @@ async fn main() -> Result<(), Box<dyn StdError>> {
             }))
         }
     });
-    // Setting up the socket, looking for a better way to do this in Rust.
-    let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
-    let server = Server::builder(hyper::server::conn::AddrIncoming::bind(&addr)?)
-        .http1_keepalive(true)
-        .http1_half_close(true)
+
+    let addr = ([127, 0, 0, 1], 3000).into();
+    let server = Server::bind(&addr)
         .serve(make_svc);
 
     println!("Lostlab proxy is running on http://{}", addr);
