@@ -11,7 +11,7 @@ Lostlab Proxy is a free and open-source reverse proxy designed to be lightweight
 ## Features
 
 - **Security**: Establishes a secure tunnel between your proxy and backend, preventing the actual backend IP from being exposed. Even if the proxy IP is leaked, your backend remains protected.
-- **Speed**: In testing, Lostlab Proxy is approximately 3x faster than traditional Go-based reverse proxies. It can handle a large number of requests on a single node without rate limiting.
+- **Speed**: In testing, Lostlab Proxy is significantly faster than traditional Go-based reverse proxies. It can handle a large number of requests on a single node without rate limiting.
 
 ## Requirements:
 - **TLS**, You need a Client Edge (Private key, Cert).
