@@ -1,15 +1,21 @@
 {
-  "domains": {
-    "lostlab.net": {
+  "domains": [
+    {
+      "domain": "lostlab.net",
       "backend": "127.0.0.1:8000",
       "cloudflare_mode": true,
-      "stage": 1
+      "stage": 1,
+      "ssl_cert_path": "/root/Lostlab-Proxy-Project-main/cert/lostlab_net/cert.pem",
+      "ssl_key_path": "/root/Lostlab-Proxy-Project-main/cert/lostlab_net/key.pem"
     },
-    "platform.lostlab.net": {
+    {
+      "domain": "libalpm.dev",
       "backend": "127.0.0.1:8000",
       "cloudflare_mode": true,
-      "stage": 1
+      "stage": 1,
+      "ssl_cert_path": "/root/Lostlab-Proxy-Project-main/cert/libalpm/cert.pem",
+      "ssl_key_path": "/root/Lostlab-Proxy-Project-main/cert/libalpm/key.pem"
     }
-  },
-  "cookie_secret": "RANDOMSECRETKEYHERE"
+  ],
+  "cookie_secret": "k1jh23g1k23g12k3g31k2j3g12kjh3gh1k3g12k312g3"
 }
